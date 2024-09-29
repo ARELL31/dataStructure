@@ -1,0 +1,58 @@
+= Lista Enlazada
+
+Una lista enlazada es una estructura de datos que permite representar un grupo de elementos en una secuencia. Cada elemento, llamado *nodo*, contiene dos partes principales:
+
+1. **Dato**: Almacena el valor del elemento.
+2. **Puntero**: Apunta al siguiente nodo en la secuencia.
+
+== ¿Es lo mismo que un array?
+
+No, aunque ambos almacenan elementos en secuencia, una lista enlazada y un array tienen diferencias significativas:
+
+* Un *array* es una estructura contigua de memoria, lo que significa que todos sus elementos están almacenados en posiciones adyacentes. Esto permite acceder directamente a cualquier elemento mediante un índice.
+* En contraste, una *lista enlazada* almacena elementos de forma dispersa en memoria, y cada nodo contiene un puntero que indica la ubicación del siguiente nodo. Esto permite una mayor flexibilidad en la inserción y eliminación de elementos, pero hace que el acceso a elementos individuales sea más costoso, ya que requiere recorrer la lista desde el principio hasta llegar al nodo deseado.
+
+== Ejemplo
+
+[source]
+----
+32 -> 21 -> 19 -> 72 -> 24
+----
+
+En este ejemplo, tenemos cinco nodos. El primero es la *cabeza* de la lista, que es el único nodo al que podemos acceder directamente. Los demás nodos se enlazan entre sí a través de punteros.
+
+* El primer nodo contiene el valor 32 y un puntero que apunta al segundo nodo.
+* El último nodo (24) contiene un puntero nulo, lo que indica que no hay más nodos después de él.
+
+== Terminología clave
+
+* *Cabeza*: Es el primer nodo de la lista, el punto de entrada para acceder a la estructura.
+* *Cola*: Son todos los nodos que siguen después de la cabeza.
+* *Puntero nulo*: El último nodo de la lista tiene un puntero nulo (a veces representado como `NULL` o `None`), indicando que es el final de la lista.
+
+== Desventajas de las listas frente a los arrays
+
+* *Acceso secuencial*: No tienen una noción de índice, lo que significa que no se puede acceder directamente a un elemento en una posición específica. Para acceder a un nodo particular, es necesario recorrer la lista desde el principio hasta llegar al nodo deseado.
+* *Mayor uso de memoria*: Cada nodo de la lista requiere espacio adicional para almacenar los punteros, lo que genera un mayor uso de memoria en comparación con un array.
+
+== Estructura básica de una lista
+
+En términos de pseudocódigo, una lista enlazada básica puede representarse así:
+
+[source]
+----
+ESTRUCTURA Lista
+    cabeza : nodo
+    cola : PUNTERO A Lista
+FIN Estructura
+----
+
+* *Nodo*: Contiene el valor del elemento y el puntero al siguiente nodo.
+* *Puntero*: El puntero de cada nodo apunta al siguiente nodo en la lista. El puntero del último nodo es nulo, lo que indica el final de la lista.
+
+== Operaciones comunes con listas enlazadas
+
+1. *Crear un nodo*: Para insertar un elemento en una lista enlazada, primero debemos crear un nuevo nodo que contenga el valor del elemento y luego ajustar los punteros para que el nuevo nodo se integre correctamente en la lista.
+   
+2. *Recorrer una lista*: Para acceder a los elementos de una lista, empezamos desde la cabeza y seguimos los punteros de cada nodo, uno tras otro, hasta llegar al final (cuando encontramos un puntero nulo).
+
